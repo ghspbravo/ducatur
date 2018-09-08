@@ -6,12 +6,11 @@ export default class Navbar extends Component {
         return (
             <header style={{
                 position: 'fixed',
-                top: '20px',
-                left: 0,
+                top: '6.2vh',
+                right: '8.3vw',
                 background: 'transparent',
                 zIndex: '10'
             }}>
-                
                 {navItemsContainer(this.props.items)}
             </header>
         )
