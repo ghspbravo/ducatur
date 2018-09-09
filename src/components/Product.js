@@ -42,7 +42,7 @@ export default class Product extends Component {
     }
     render() {
         return (
-            <section id='product' style={{ marginTop: '35vh', display: 'flex', flexDirection: 'column', marginLeft: 'auto', marginRight: 'auto', width: window.innerWidth < 568 ? '100%' : '70vw' }}>
+            <section id='product' style={{ position: 'relative', zIndex: '5', marginTop: '35vh', display: 'flex', flexDirection: 'column', marginLeft: 'auto', marginRight: 'auto', width: window.innerWidth < 568 ? '100%' : '70vw' }}>
                 <h1 ref={this.rotateBorderRef} style={{
                     fontFamily: 'Arame Bold',
                     fontSize: '2.625rem',

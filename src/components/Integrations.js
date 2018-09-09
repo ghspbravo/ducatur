@@ -30,7 +30,7 @@ let column = (thumbnail, title, description) => <div style={{ flexBasis: window.
 export default class Integrations extends Component {
     render() {
         return (
-            <section style={{ marginTop: '25vh', display: 'flex', flexDirection: 'column', marginLeft: 'auto', marginRight: 'auto', width: window.innerWidth < 568 ? '100%' : '70vw'}}>
+            <section id="integrations" style={{ marginTop: '25vh', display: 'flex', flexDirection: 'column', marginLeft: 'auto', marginRight: 'auto', width: window.innerWidth < 568 ? '100%' : '70vw'}}>
                 <h1 style={{
                     fontFamily: 'Arame Bold',
                     fontSize: '2.625rem',

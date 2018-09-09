@@ -2,12 +2,12 @@ import React from 'react'
 
 export default () => {
     return (
-        <button onClick={() => document.querySelector('#city').scrollIntoView()} style={{
+        <button id='scroll' onClick={() => document.querySelector('#city').scrollIntoView()} style={{
             transform: 'rotate(90deg)',
             position: 'absolute',
             right: window.innerHeight > 992 ? '6.25vw' : '0',
             top: window.innerHeight > 992 ? '85vh' : '75vh',
-            zIndex: '10',
+            zIndex: '9',
             display: 'flex',
             alignItems: 'center',
             cursor: 'pointer',

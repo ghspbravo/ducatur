@@ -4,7 +4,7 @@ import ImageMapper from 'react-image-mapper'
 import imageMapResize from 'image-map-resizer'
 
 import city from '../resourses/City_stage.png';
-import popupDetails from './controls/popupDetails';
+import PopupDetails from './controls/popupDetails';
 
 export default class City extends Component {
 
@@ -36,7 +36,7 @@ export default class City extends Component {
 
     componentDidMount() {
         imageMapResize()
-        document.addEventListener('scroll', () => this.setState({show: false}))
+        document.addEventListener('scroll', () => this.setState({ show: false }))
     }
     city_map = {
         name: "city_map",
@@ -55,14 +55,13 @@ export default class City extends Component {
     render() {
         return (
             <section id='city' style={{ marginTop: '20vw', position: 'relative', textAlign: 'center', zIndex: '5' }}>
-                {/* <img src={city} alt="city" style={{ objectFit: 'cover', height: window.innerWidth < 568 ? '100vw' : null }} /> */}
-                <ImageMapper src={city} map={this.city_map} height={window.innerWidth < 568 ? window.innerWidth : window.innerHeight*1.3} strokeColor='red'
+                <ImageMapper src={city} map={this.city_map} height={window.innerWidth < 568 ? window.innerWidth : window.innerHeight * 1.3} strokeColor='red'
                     onClick={(area, index, event) => this.handleBuildingClick(event, index)}
-                    onImageClick={() => this.setState({show: false})}
-                    onLoad={() => {document.querySelector('#city > div').style.marginLeft = 'auto'; document.querySelector('#city > div').style.marginRight = 'auto'; document.querySelector('#city img').style.objectFit = 'cover'}}
+                    onImageClick={() => this.setState({ show: false })}
+                    onLoad={() => { document.querySelector('#city > div').style.marginLeft = 'auto'; document.querySelector('#city > div').style.marginRight = 'auto';  }}
                 />
                 {this.state.show
-                    ? popupDetails(this.descriptions[this.state.building], this.state.xPos, this.state.yPos)
+                    ? <PopupDetails description={this.descriptions[this.state.building]} xPos={this.state.xPos} yPos={this.state.yPos} />
                     : null
                 }
             </section>

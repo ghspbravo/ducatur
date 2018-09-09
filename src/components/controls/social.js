@@ -13,7 +13,7 @@ let socialIconStyle = {
 
 export default () => {
     return (
-        <div style={{
+        <div id='social' style={{
             display: 'flex',
             alignItems: 'flex-end'
         }}>
