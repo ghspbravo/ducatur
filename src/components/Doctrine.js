@@ -6,7 +6,7 @@ import signButton from './controls/signButton';
 export default class Doctrine extends Component {
     render() {
         return (
-            <section style={{ marginTop: '35vh', display: 'flex', flexWrap: 'wrap', paddingBottom: window.innerWidth > 576 ? '20vh' : null }}>
+            <section id='doctrine' style={{ marginTop: '35vh', display: 'flex', flexWrap: 'wrap', paddingBottom: window.innerWidth > 576 ? '20vh' : null, zIndex: 5, position: 'relative' }}>
                 <div style={{ flexBasis: window.innerWidth < 992 ? '100%' : '40%', display: 'flex', justifyContent: 'center', alignContent: 'center', flexDirection: 'column' }}>
                     <img src={brand} alt="brand" style={{ height: '10vh', padding: '0 5px' }} />
                     <h1 style={{ fontFamily: 'Arame Regular', fontSize: '3rem', textAlign: 'center', textTransform: 'uppercase', width: '100%' }}>doctrine</h1>

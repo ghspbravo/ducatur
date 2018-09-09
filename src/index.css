@@ -164,6 +164,7 @@ input[type=button] {width: auto; overflow: visible;}
 
 body {
 	color: white;
+	overflow-x: hidden;
 }
 
 html {

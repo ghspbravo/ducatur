@@ -4,9 +4,12 @@
   "private": true,
   "dependencies": {
     "gsap": "^2.0.2",
+    "image-map-resizer": "^1.0.7",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
-    "react-scripts": "1.1.5"
+    "react-image-mapper": "0.0.7",
+    "react-scripts": "1.1.5",
+    "scrollmagic": "^2.0.5"
   },
   "scripts": {
     "start": "react-scripts start",

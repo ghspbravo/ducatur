@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
 import ellipse from '../resourses/Ellipse.svg'
+import ellipseAlt from '../resourses/Ellipse2.svg'
+import { rotate } from '../animations';
 
 let column = (title, category, number, description) => <div style={{ flexBasis: window.innerWidth > 992 ? '33.33%' : '100%', marginTop: window.innerWidth < 992 ? '5vh' : null }}>
     <div style={{
@@ -11,7 +13,7 @@ let column = (title, category, number, description) => <div style={{ flexBasis: 
         padding: '50px 53px',
         margin: '0 auto'
     }} >
-        <img src={ellipse} alt="ellipse" style={{position: 'absolute', width: '100%', height: '100%', left: '0', top: '0'}}/>
+        <img src={number === '100%' ? ellipseAlt : ellipse} alt="ellipse" style={{ transform: `rotate(${Math.random()*360}deg)`, position: 'absolute', width: '100%', height: '100%', left: '0', top: '0' }} />
         <p style={{ fontFamily: 'Arame Regular', fontSize: '1.125rem', textTransform: 'uppercase' }}>{category}</p>
         <h2 style={{
             fontFamily: 'Arame Regular',
@@ -34,10 +36,14 @@ let column = (title, category, number, description) => <div style={{ flexBasis: 
 </div>
 
 export default class Product extends Component {
+
+    componentDidMount() {
+        document.querySelectorAll('#product img').forEach(elem => rotate(elem))
+    }
     render() {
         return (
-            <section style={{ marginTop: '25vh', display: 'flex', flexDirection: 'column', marginLeft: 'auto', marginRight: 'auto', width: window.innerWidth < 568 ? '100%' : '80vw'}}>
-                <h1 style={{
+            <section id='product' style={{ marginTop: '35vh', display: 'flex', flexDirection: 'column', marginLeft: 'auto', marginRight: 'auto', width: window.innerWidth < 568 ? '100%' : '70vw' }}>
+                <h1 ref={this.rotateBorderRef} style={{
                     fontFamily: 'Arame Bold',
                     fontSize: '2.625rem',
                     textAlign: 'center'
@@ -50,7 +56,7 @@ export default class Product extends Component {
                 }}>
                     {column('EOS ORACLES', 'product', '13%', 'THE EOS ORACLES FOR THE CRYPTO PRICESWRAPPED IN WEB-UI')}
                     {column('EOS ORACLES', 'product', '13%', 'THE EOS ORACLES FOR THE CRYPTO PRICESWRAPPED IN WEB-UI')}
-                    {column('EOS ORACLES', 'product', '13%', 'THE EOS ORACLES FOR THE CRYPTO PRICESWRAPPED IN WEB-UI')}
+                    {column('EOS ORACLES', 'product', '100%', 'THE EOS ORACLES FOR THE CRYPTO PRICESWRAPPED IN WEB-UI')}
                 </div>
             </section>
         )
