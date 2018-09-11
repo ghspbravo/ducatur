@@ -19,8 +19,10 @@ export default class PopupDetails extends Component {
                 position: "fixed",
                 top: window.innerWidth < 568 ? '20vh' : this.props.yPos - 0.14 * window.innerWidth + 'px',
                 left: window.innerWidth < 568 ? '5vw' : this.props.xPos - 0.07 * window.innerWidth + window.innerWidth * 0.247 > window.innerWidth ? this.props.xPos - window.innerWidth * 0.247 + 'px' : this.props.xPos - 0.07 * window.innerWidth + 'px',
-                height: window.innerWidth < 568 ? '200px' : '14vw',
-                width: window.innerWidth < 568 ? '300px' : '24.7vw',
+                height: '14vw',
+                width: '24.7vw',
+                minHeight: '200px',
+                minWidth: '300px',
                 zIndex: '10'
             }}>
                 <div style={{ position: 'relative', padding: '1.8vw 2.76vw 2vw 3.125vw', width: '100%', height: '100%' }}>
